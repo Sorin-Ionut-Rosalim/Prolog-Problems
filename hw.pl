@@ -7,7 +7,7 @@
 % like(X,Y) :- actress(X), senimental(Y).
 
 % EX2 Last element
-lastElem([], flase).
+lastElem([], false).
 lastElem([H|[]],H).
 lastElem([_|T],E) :- lastElem(T,E).
 
