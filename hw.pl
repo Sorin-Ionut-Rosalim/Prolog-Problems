@@ -33,10 +33,12 @@ p(X,Y) :- X > 9, Y = 4 / (X - 5).
 
 % EX7
 delElem(_,[],[]).
+delElem(X,[H|T1],[H|T2]) :- delElem(X,T1,T2), (X \= H).
 delElem(X,[X|T],R) :- delElem(X,T,R).
-delElem(X,[H|T],R) :- delElem(X,T,R2), append([H], R2, R).
 
 % EX8
+% we can also call the function sort to remove the duplicates
 noDuplicates([],[]).
 noDuplicates([H|T],R) :- member(H, T), !, noDuplicates(T,R). 
 noDuplicates([H|T],[H|R]) :- noDuplicates(T,R).
+
